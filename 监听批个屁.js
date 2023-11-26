@@ -1,9 +1,9 @@
 auto.waitFor();
-events.observeNotification();
+events.observeNotification(); //启动监听
 events.on("notification", function(n){
-    log(n.getTitle());
-    log(n.getPackageName());
-    if (n.getTitle() == "竞彩超额申请书，请初审！") {
+    log(n.getTitle()); //监听包名
+    log(n.getPackageName());  //监听通知标题
+    if (n.getTitle() == "竞彩超额申请书，请初审！") {  //当出现初审时
         if (!device.isScreenOn()) {        //从息屏状态  将屏幕唤醒
             device.wakeUp()//唤醒设备
             sleep(3000) // 等待屏幕亮起
@@ -40,6 +40,7 @@ click(350, 1300);
 sleep(200);
 click(480, 1400);
 sleep(200);
+//结束批个屁
 app.openAppSetting('com.tc.mobile')
 sleep(1000);
 while(true){
